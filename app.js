@@ -1,4 +1,4 @@
-var config = require (__dirname+"config/config");
+var config = require (__dirname+"/config/config");
 //same again pull the config file /
 var setRoutes = require (config.ROOT+"/routes/setup-route").configureRoutes;
 //define setRoutes =  setup-route.configureRoutes function

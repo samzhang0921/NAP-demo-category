@@ -56,6 +56,6 @@ var routes = {
     }
 };
 
-module.export = {
+module.exports = {
     routes: routes
 }

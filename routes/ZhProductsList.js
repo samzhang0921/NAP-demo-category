@@ -9,8 +9,8 @@ function finalPrice(product) {
     return product.price.gross / product.price.divisor;
 };
 
-var routes ={
-    init: function (app){
+var routes = {
+    init: function(app) {
         app.get("test/zhproducts", function (req, res, next){
             var allProducts = require (config.ROOT+"/data/products.json").data;
 //            find the products.json file and get the data

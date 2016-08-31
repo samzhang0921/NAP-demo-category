@@ -11,14 +11,14 @@ function finalPrice(product) {
 
 var routes = {
     init: function(app) {
-        app.get("test/zhproducts", function (req, res, next){
-            var allProducts = require (config.ROOT+"/data/products.json").data;
+        app.get("/test/zhproducts", function (req, res, next){
+            var allProducts = require (config.ROOT + "/data/products.json").data;
 //            find the products.json file and get the data
             var total = allProducts.length;
 //            find how many product
-            var offset = req.query.offset || 0;
+            var offset = parseInt(req.query.offset) || 0;
             
-            var limit = req.query.limit || 60;
+            var limit = parseInt(req.query.limit) || 60;
             
              
             if (offset > total) {

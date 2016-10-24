@@ -7,54 +7,110 @@ var productImageRoot = '//cache.net-a-porter.com/images/products/';
 
 function finalPrice(product) {
     return product.price.gross / product.price.divisor;
-    
 };
+
+function sortBy(products, sortOrder) {
+  switch (sortOrder) {
+    case 'high':
+      products.sort(function(productA, productB){
+        return productA.price.gross < productB.price.gross ? 1 : -1;
+      });
+      return products;
+      break;
+    case 'low':
+      products.sort(function(productA, productB){
+        return productA.price.gross > productB.price.gross ? 1 : -1;
+      });
+      return products;
+      break;
+    default:
+      return;
+  }
+}
+
+function getBrandProducts(products, brandID) {
+  return products.filter(function(product){
+    return product.brand.id == brandID;
+  });
+}
+
+function getAllBrandsProducts(products, brandArray) {
+  var brandProducts = [];
+  for (var i=0;i < brandArray.length; i++) {
+    brandProducts = brandProducts.concat(getBrandProducts(products, brandArray[i]));
+  }
+
+  return brandProducts;
+}
 
 var routes = {
     init: function(app) {
-        app.get("/test/zhproducts", function (req, res, next){
+        app.get("/:language/test/zhproducts", function (req, res, next){
+
+          // var array1 = allProducts;
+          // var array2 = sortBy(allProducts, 'high');
+          // var array3 = sortBy(allProducts, 'low');
+
             var allProducts = require (config.ROOT + "/data/products.json").data;
 //            find the products.json file and get the data
             var total = allProducts.length;
 //            find how many product
             var offset = parseInt(req.query.offset) || 0;
-            
+
             var limit = parseInt(req.query.limit) || 60;
-            
-             
+
+
             if (offset > total) {
                 return res.type('json').sendStatus(400);
 //                if the offset more than total return 400 Bad requestw
             }
-            
+
+            var lanuage = req.params.language;
+            var sort = req.query.sort;
+
+            //12,32,23
+            var brandId = req.query.brand;
+
+            var brandProducts = allProducts;
+
+            if (brandId) {
+              var brandArray = brandId.split(',');
+              //get brand
+              brandProducts = getAllBrandsProducts(allProducts, brandArray);
+            }
+
+            var sortedProducts = sortBy(brandProducts, sort);
+
+            var slice = sortedProducts.slice(offset, offset+limit);
+
             res.json( {
-                
-//                set what response data will return and it should be Json format 
+
+//                set what response data will return and it should be Json format
                 offset: offset,
                 limit: limit,
                 total: total,
-                products: allProducts.slice(offset, offset+limit).map(function(product){
-//                    lidan please talk about more slice and map 
+                products: slice.map(function(product){
+//                    lidan please talk about more slice and map
 //                    important!
 //                    product
-                    
+
                     return {
                         sku: product.id,
-                        name: product.name.zh,
+                        name: product.name[lanuage],
                         price: '£' + finalPrice(product),
                         color: product.colourIds,
                         brand_name: product.brand.name.en,
                         brand_id: product.brand.id,
                         image: {
                             outfit:'//cache.net-a-porter.com/images/products/'+product.id+'/'+product.id+'_ou_sl.jpg'
-                        
+
                         }
                     }
                 })
             })
-            
+
         })
-        
+
     }
 };
 

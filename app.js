@@ -5,7 +5,7 @@ var setRoutes = require (config.ROOT+"/routes/setup-route").configureRoutes;
 
 var expressUtilities = require(config.ROOT + '/utilities/express');
 
-// lidan please talk more about express 
+// lidan please talk more about express
 
 var app = expressUtilities.appConfiguration.init();
 

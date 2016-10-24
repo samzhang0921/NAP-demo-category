@@ -7,6 +7,7 @@ var productImageRoot = '//cache.net-a-porter.com/images/products/';
 
 function finalPrice(product) {
     return product.price.gross / product.price.divisor;
+    
 };
 
 var routes = {
@@ -45,7 +46,8 @@ var routes = {
                         brand_name: product.brand.name.en,
                         brand_id: product.brand.id,
                         image: {
-                            outfit:productImageRoot+"/"+product.id+"/"+product.id+"_ou_sl.jpg"
+                            outfit:'//cache.net-a-porter.com/images/products/'+product.id+'/'+product.id+'_ou_sl.jpg'
+                        
                         }
                     }
                 })

@@ -38,17 +38,22 @@ function getAllBrandsProducts(products, brandArray) {
 
 function getProductsColor(products, colorId) {
     return products.filter(function (product) {
-        return product.colourIds == colorId;
+      for(var i=0;i<product.colourIds.length; i++){
+        if (product.colourIds[i] == colorId) {
+          return true;
+        }
+      }
+        return false;
     });
 }
 
 function getAllProductsColor(products, colorArray) {
     var colorProducts = [];
-    for (var k = 0; k < colorArray.length; k++) {
-        colorProducts = colorProducts.concat(getProductsColor(products, colorArray[k]));
+    for (var i = 0; i < colorArray.length; i++) {
+        colorProducts = colorProducts.concat(getProductsColor(products, colorArray[i]));
     }
+    return colorProducts;
 }
-
 
 module.exports = {
   finalPrice: finalPrice,

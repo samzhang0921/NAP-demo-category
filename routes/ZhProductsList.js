@@ -34,6 +34,7 @@ function getBrandProducts(products, brandID) {
   });
 }
 
+
 function getAllBrandsProducts(products, brandArray) {
   var brandProducts = [];
   for (var i=0;i < brandArray.length; i++) {
@@ -41,6 +42,20 @@ function getAllBrandsProducts(products, brandArray) {
   }
 
   return brandProducts;
+}
+
+
+function getProductsColor(products, colorID){
+    return products.filter(function(product){
+        return product.colourIds == colorID;
+    });
+}
+
+function getAllProductsColor(products, colorArray){
+    var colorProducts = [];
+    for (var i=0; i < colorArray.length; i++){
+        colorProducts = colorProducts.concat(getProductsColor(products,colorArray[i]));
+    }
 }
 
 var routes = {
@@ -53,7 +68,7 @@ var routes = {
 
             var allProducts = require (config.ROOT + "/data/products.json").data;
 //            find the products.json file and get the data
-            var total = allProducts.length;
+            
 //            find how many product
             var offset = parseInt(req.query.offset) || 0;
 
@@ -71,17 +86,36 @@ var routes = {
             //12,32,23
             var brandId = req.query.brand;
 
-            var brandProducts = allProducts;
+//            var brandProducts = allProducts;
 
             if (brandId) {
               var brandArray = brandId.split(',');
               //get brand
-              brandProducts = getAllBrandsProducts(allProducts, brandArray);
+            var brandProducts = getAllBrandsProducts(allProducts, brandArray);
+            allProducts = brandProducts; 
             }
-
-            var sortedProducts = sortBy(brandProducts, sort);
-
-            var slice = sortedProducts.slice(offset, offset+limit);
+            
+            var colorId = req.query.color;
+            if(colorId){
+                var colorArray = colorId.split(',');
+                var colorProducts = getAllProductsColor(allProducts, colorArray);
+            allProducts = colorProducts; 
+            }
+            
+    //make sure if there no sort query,  it still can get data
+            var slice = allProducts.slice(offset, offset+limit);
+            if (sort){
+                var sortedProducts = sortBy(allProducts, sort);
+                allProducts = sortedProducts;
+                slice = allProducts.slice(offset, offset+limit);
+            }
+            
+          
+            
+            var total = allProducts.length;
+//            console.log(sortedProducts);
+//
+//            var slice = sortedProducts.slice(offset, offset+limit);
 
             res.json( {
 
@@ -90,7 +124,7 @@ var routes = {
                 limit: limit,
                 total: total,
                 products: slice.map(function(product){
-//                    lidan please talk about more slice and map
+//                 
 //                    important!
 //                    product
 

@@ -1,0 +1,26 @@
+<ul>
+{{#each allProducts.products}}
+  <li>
+    <img src="{{this.image.outfit}}">
+    <div class='brand'>{{this.brand_name}}</div>
+    <div>{{this.price}}</div>
+  </li>
+{{/each}}
+</ul>
+
+<style>
+  li {
+    width:30%;
+    float:left;
+    list-style: none;
+  }
+
+  li img {
+    width: 100%;
+  }
+
+  .brand {
+    overflow: hidden;
+    height: 20px;
+  }
+</style>

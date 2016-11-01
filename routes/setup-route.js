@@ -1,5 +1,6 @@
 var config = require('../config/config');
 var ZhProductsList = require (config.ROOT+"/routes/ZhProductslist");
+var categories = require ("../routes/categories");
 
 //pull the config file , let it know root folder and port.
 
@@ -8,6 +9,7 @@ var configureRoutes = {
 //        pull the zh ZhProductsList in , pionts the customer go to this routes.
         ZhProductsList.routes.init(app);
 //        run the function under the ZhProductsList
+        categories.routes.init(app);
 
     }
 };

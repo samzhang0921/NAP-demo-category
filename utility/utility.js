@@ -55,11 +55,23 @@ function getAllProductsColor(products, colorArray) {
     return colorProducts;
 }
 
+function getAllCategoriesProducts(products, categories){
+    return products.filter(function (product){
+        for(var i=0;i<product.categories.length; i++){
+        if (categories == product.categories[i].id) {
+          return true;
+        }
+      }
+        return false;
+    });
+}
+
 module.exports = {
   finalPrice: finalPrice,
   sortBy: sortBy,
   getBrandProducts: getBrandProducts,
   getAllBrandsProducts: getAllBrandsProducts,
   getProductsColor: getProductsColor,
-  getAllProductsColor: getAllProductsColor
+  getAllProductsColor: getAllProductsColor,
+  getAllCategoriesProducts: getAllCategoriesProducts
 };

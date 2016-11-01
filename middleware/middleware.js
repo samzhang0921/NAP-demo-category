@@ -12,6 +12,15 @@ function setLanguage(req, res, next) {
   next();
 }
 
+function setCategories(req, res, next) {
+    res.locals.categories = req.params.categories;
+    next();
+}
+
+function setCaregoriesProducts(req, res, next){
+    res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
+    next();
+}
 function setQuery(req, res, next) {
   res.locals.offset = parseInt(req.query.offset) || 0;
   res.locals.limit = parseInt(req.query.limit) || 60;
@@ -46,5 +55,7 @@ module.exports = {
   init: init,
   setQuery: setQuery,
   setLanguage: setLanguage,
+  setCategories: setCategories,
+  setCaregoriesProducts: setCaregoriesProducts,
   processProducts: processProducts
 };

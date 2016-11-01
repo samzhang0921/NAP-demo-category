@@ -33,10 +33,13 @@ module.exports = {
                 color: product.colourIds,
                 brand_name: product.brand.name.en,
                 brand_id: product.brand.id,
+                caregories:product.categories,
                 image: {
                     outfit: '//cache.net-a-porter.com/images/products/' + product.id + '/' + product.id + '_ou_sl.jpg'
 
-                }
+                },
+                
+                
             }
         })
     })

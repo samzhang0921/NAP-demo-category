@@ -26,7 +26,7 @@ function setQuery(req, res, next) {
   res.locals.limit = parseInt(req.query.limit) || 60;
   res.locals.sort = req.query.sort;
   res.locals.brandId = req.query.brand;
-  res.locals.colorId = req.query.color;
+  res.locals.colorId = req.query.color || '';
   next();
 }
 
@@ -36,7 +36,6 @@ function processProducts(req, res, next) {
       var brandProducts = utility.getAllBrandsProducts(res.locals.allProducts, brandArray);
       res.locals.allProducts = brandProducts;
   }
-  // console.log(res.locals.allProducts);
   if (res.locals.colorId) {
       var colorArray = res.locals.colorId.split(',');
       var colorProducts = utility.getAllProductsColor(res.locals.allProducts, colorArray);
@@ -45,7 +44,6 @@ function processProducts(req, res, next) {
   //make sure if there no sort query,  it still can get data
   if (res.locals.sort) {
       var sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
-      allProducts = sortedProducts;
   }
 
   next();

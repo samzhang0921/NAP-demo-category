@@ -12,7 +12,7 @@ var listing = {
         return res.type('json').sendStatus(400);
         //                if the offset more than total return 400 Bad requestw
     }
-
+    
     return {
         offset: res.locals.offset,
         limit: res.locals.limit,
@@ -20,7 +20,7 @@ var listing = {
         products: sliceProducts.map(function (product) {
             return {
                 sku: product.id,
-                name: product.name[res.locals.lanuage],
+                name: product.name[res.locals.language],
                 price: '£' + utility.finalPrice(product),
                 color: product.colourIds,
                 brand_name: product.brand.name.en,

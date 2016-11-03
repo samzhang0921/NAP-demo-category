@@ -4,7 +4,7 @@ var middleware = require('../middleware/middleware');
 module.exports = function(app){
   app.get('/hello/:name', listingpage.hello);
 
-  app.get('/shop',
+  app.get('/:language/shop',
     middleware.setLanguage,
     middleware.init,
     middleware.setQuery,

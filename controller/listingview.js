@@ -7,6 +7,8 @@ function hello(req, res) {
 
 function render(req, res){
   res.locals.allProducts = listing.prepareData(res);
+//    console.log(res.locals.allProducts);
+//    console.log(res.locals.language);
   res.render('listing');
 }
 

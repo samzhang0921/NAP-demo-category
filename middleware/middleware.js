@@ -45,7 +45,7 @@ function processProducts(req, res, next) {
   if (res.locals.sort) {
       var sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
   }
-  console.log(res.locals.allProducts);
+//  console.log(res.locals.allProducts);
   next();
 }
 

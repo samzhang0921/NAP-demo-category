@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "start":"node app"
+    "start": "node app",
+    "w":"sass --watch public/css/style.scss:public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,8 @@
   ],
   "author": "sam",
   "license": "ISC",
-    
   "dependencies": {
-    "express": "^4.9.8",
+    "express": "^4.9.8",w
     "express-hbs": "^0.7.11",
     "express-params": "0.0.3",
     "handlebars": "^4.0.5",

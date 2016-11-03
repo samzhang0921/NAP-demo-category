@@ -1,26 +1,25 @@
-<ul>
-{{#each allProducts.products}}
-  <li>
-    <img src="{{this.image.outfit}}">
-    <div class='brand'>{{this.brand_name}}</div>
-    <div>{{this.price}}</div>
-  </li>
-{{/each}}
-</ul>
+<html>
 
-<style>
-  li {
-    width:30%;
-    float:left;
-    list-style: none;
-  }
+<head>
+    <title>shop</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-  li img {
-    width: 100%;
-  }
+<body class="shop">
+   <div class="title_box">
+      <h1>What's new</h1>
+       <div class="hrBox"><span>{{allProducts.total}}</span></div>
+   </div>
+    <ul>
+        {{#each allProducts.products}}
+        <li>
+            <img src="{{this.image.outfit}}">
+            <p>{{this.name}}</p>
+            <div class='brand'>{{this.brand_name}}</div>
+            <div>{{this.price}}</div>
+        </li>
+        {{/each}}
+    </ul>
+</body>
 
-  .brand {
-    overflow: hidden;
-    height: 20px;
-  }
-</style>
+</html>

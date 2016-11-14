@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "start": "node app",
-    "w":"sass --watch public/css/style.scss:public/css/style.css"
+    "w": "sass --watch public/css/style.scss:public/css/style.css",
+    "buildcss": "grunt",
+    "prepare": "npm install && grunt"
   },
   "repository": {
     "type": "git",
@@ -30,5 +32,13 @@
   "bugs": {
     "url": "https://github.com/samzhang0921/napTest/issues"
   },
-  "homepage": "https://github.com/samzhang0921/napTest#readme"
+  "homepage": "https://github.com/samzhang0921/napTest#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-sass": "^1.2.1"
+  }
 }

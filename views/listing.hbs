@@ -2,32 +2,14 @@
 
 <head>
     <title>shop</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    {{> style}}
 </head>
 
 <body>
-  <div class="productsListHeader">
-      <div class="productsListSortOutfit"></div>
-      <div class="productsListTitle">
-          <h1>What's New</h1>
-          <span>{{allProducts.total}}</span>
-      </div>
-      <div class="productsListPagination"></div>
-  </div>
-   <div class="productsFilterMenu"></div>
-   <div class="productsList">
-        <ul>
-        {{#each allProducts.products}}
-        <li>
-            <img src="{{this.image.outfit}}">
-            <p>{{this.name}}</p>
-            <div class='brand'>{{this.brand_name}}</div>
-            <div>{{this.price}}</div>
-        </li>
-        {{/each}}
-    </ul>
-   </div>
-   
+  {{> header}}
+  {{> leftNav}}
+  {{> products}}
+  {{> script}}
 </body>
 
 </html>

@@ -1,0 +1,12 @@
+<div class="productsList" id="productList">
+     <ul>
+     {{#each allProducts.products}}
+     <li>
+         <img src="{{this.image.outfit}}">
+         <p>{{this.name}}</p>
+         <div class='brand'>{{this.brand_name}}</div>
+         <div>{{this.price}}</div>
+     </li>
+     {{/each}}
+ </ul>
+</div>

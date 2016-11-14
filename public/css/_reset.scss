@@ -1,0 +1,10 @@
+body.layout-fixed {
+    min-width: 0 !important;
+}
+
+main {
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-bottom: 0 !important;
+    overflow: visible;
+}

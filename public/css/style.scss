@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// Third-party libraries
+//@import "font-awesome/font-awesome.scss";
+
+// Variables and mixins
+@import "variables";
+@import "mixins";
+@import "grid";
+    
+.superhub {
+    padding: 15px 0 30px;
+    box-sizing: border-box;
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+    .tabs-sections {
+        > section {
+            display: none;
+            min-height: 400px;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.margin {
+    
+}

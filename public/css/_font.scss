@@ -1,0 +1,113 @@
+// Font stacks
+$sans-serif:                    'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif:                         Georgia, Times, 'Times New Roman', serif;
+$gill-sans:                     'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+$zh:                            'Microsoft YaHei', '微软雅黑', Hei, Hei Ti, SimHei, STXihei, sans-serif;
+
+// Gill Sans
+$GillSans:                      GillSans, $gill-sans;
+$GillSansBold:                  GillSansBold, $gill-sans;
+$GillSansLight:                 GillSansLight, $gill-sans;
+
+// NAP fonts
+$ModernNAP-Display:             ModernNAP-Display, $serif;
+$ModernNAP-DisplayItalic:       ModernNAP-DisplayItalic, $serif;
+
+$ModernNAP-Text:                ModernNAP-Text, $serif;
+$ModernNAP-TextItalic:          ModernNAP-TextItalic, $serif;
+
+$ModernNAP-Subhead:             ModernNAP-Subhead, $serif;
+$ModernNAP-SubheadItalic:       ModernNAP-SubheadItalic, $serif;
+
+// Chinese fonts
+$MHeiPRC-Medium:                'MHei PRC Medium', $zh;
+$MSungPRC-Medium:               'MSung PRC Medium', $zh;
+$MSungPRC-Bold:                 'MSung PRC Bold', $zh;
+$MSungPRC-Light:                'MSung PRC Light', $zh;
+
+.superhub {
+    @include font-smoothing;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $ModernNAP-Text;
+        @include responsive-br;
+        font-weight: normal;
+        font-style: normal;
+        overflow: visible;
+        text-transform: none;
+        i {
+            font-family: $ModernNAP-TextItalic;
+            font-size: inherit;
+            font-style: normal;
+            text-transform: none;
+            span {
+                font-family: inherit;
+                font-size: inherit;
+            }
+        }
+        &.display {
+            font-family: $ModernNAP-Display;
+            i {
+                font-family: $ModernNAP-DisplayItalic;
+            }
+        }
+        &.subhead {
+            font-family: $ModernNAP-Subhead;
+            i {
+                font-family: $ModernNAP-SubheadItalic;
+            }
+        }
+        &.gillsans {
+            font-family: $GillSans;
+            strong {
+                font-family: $GillSansBold;
+                font-weight: normal;
+            }
+        }
+    }
+    a {
+
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        color: inherit;
+        &:hover {
+            text-decoration: none;
+        }
+        strong {
+            font-family: $GillSansBold;
+            font-weight: normal;
+            font-size: inherit;
+        }
+    }
+    p {
+        font-family: $GillSans;
+        line-height: 1.3;
+        margin: 0 0 15px 0;
+        @include responsive-br;
+        text-align: inherit;
+        a {
+            font-size: inherit;
+            text-decoration: underline;
+        }
+        strong {
+            font-size: inherit;
+            font-family: $GillSansBold;
+            font-weight: normal;
+        }
+        &.smaller {
+            font-size: 85%;
+        }
+        &.featured {
+            font-family: $ModernNAP-Text;
+        }
+    }
+    @media (min-width: $screen-sm-min) {
+        p {
+            font-size: 15px;
+        }
+    }
+}

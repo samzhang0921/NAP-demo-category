@@ -5,12 +5,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body class="shop">
-   <div class="title_box">
-      <h1>What's new</h1>
-       <div class="hrBox"><span>{{allProducts.total}}</span></div>
-   </div>
-    <ul>
+<body>
+  <div class="productsListHeader">
+      <div class="productsListSortOutfit"></div>
+      <div class="productsListTitle">
+          <h1>What's New</h1>
+          <span>{{allProducts.total}}</span>
+      </div>
+      <div class="productsListPagination"></div>
+  </div>
+   <div class="productsFilterMenu"></div>
+   <div class="productsList">
+        <ul>
         {{#each allProducts.products}}
         <li>
             <img src="{{this.image.outfit}}">
@@ -20,6 +26,8 @@
         </li>
         {{/each}}
     </ul>
+   </div>
+   
 </body>
 
 </html>

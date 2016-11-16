@@ -3,6 +3,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
     less: {
@@ -35,7 +36,13 @@ module.exports = function(grunt){
         dest: 'public/javascripts/build/build.js',
       },
     },
+    watch:{
+         sass: {
+                files: ['src/scss/**/*.scss'],
+                tasks: ['sass:build',]
+            },
+    }
   });
 
-  grunt.registerTask('default', ['less', 'concat', 'uglify']);
+  grunt.registerTask('default', ['less', 'concat', 'uglify','watch']);
 };

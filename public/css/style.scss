@@ -7,8 +7,9 @@
 @import "variables";
 @import "mixins";
 @import "grid";
-    
-.superhub {
+@import "font";
+//@import "reset";
+.listPage {
     padding: 15px 0 30px;
     box-sizing: border-box;
     *,
@@ -25,8 +26,4 @@
             }
         }
     }
-}
-
-.margin {
-    
 }

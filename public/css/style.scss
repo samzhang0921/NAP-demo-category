@@ -6,12 +6,19 @@
 // Variables and mixins
 @import "variables";
 @import "mixins";
+@import "reset";
 @import "grid";
 @import "font";
 //@import "reset";
+@import "utilities";
+@import "productsList";
+@import "productsListHeader";
+
 .listPage {
+    margin: 0 auto;
     padding: 15px 0 30px;
     box-sizing: border-box;
+    max-width: 1200px;
     *,
     *:before,
     *:after {

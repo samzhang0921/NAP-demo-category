@@ -8,13 +8,13 @@ module.exports = function(grunt){
     
 
   grunt.initConfig({
-    less: {
-      build: {
-        files: {
-          'public/build/style.css': 'public/less/style.less'
-        }
-      }
-    },
+//    less: {
+//      build: {
+//        files: {
+//          'public/build/style.css': 'public/less/style.less'
+//        }
+//      }
+//    },
     sass: {
          build: {
                 options: {
@@ -66,5 +66,5 @@ module.exports = function(grunt){
     }
   });
 
-  grunt.registerTask('default', ['less', 'concat', 'uglify','watch','jshint']);
+  grunt.registerTask('default', ['sass', 'concat', 'uglify','watch','jshint']);
 };

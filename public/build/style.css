@@ -1032,8 +1032,8 @@ main {
 .productsList {
   font-family: GillSans, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 14px;
-  padding-left: 15px;
-  padding-right: 15px; }
+  width: 70%;
+  float: left; }
   .productsList ul li {
     width: 33.33%;
     height: 350px;
@@ -1049,19 +1049,29 @@ main {
       font-size: 14px; }
 
 .productsListHeader {
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom: 1px solid #000; }
-  .productsListHeader .productsListTitle h1 {
-    text-align: center;
-    font-size: 20px; }
-  .productsListHeader .productsListTitle span {
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    display: block;
-    background-color: #fff;
-    margin-bottom: -5px; }
+  border-bottom: 1px solid #000;
+  padding-top: 20px;
+  display: block;
+  position: relative; }
+  .productsListHeader .productsListSortOutfit {
+    width: 35%;
+    float: left; }
+  .productsListHeader .productsListTitle {
+    width: 30%;
+    float: left; }
+    .productsListHeader .productsListTitle h1 {
+      text-align: center;
+      font-size: 20px; }
+    .productsListHeader .productsListTitle .productsListResult {
+      width: 75%;
+      margin: 0 auto;
+      text-align: center;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: #fff; }
+  .productsListHeader .productsListPagination {
+    width: 35%;
+    float: left; }
 
 .listPage {
   margin: 0 auto;

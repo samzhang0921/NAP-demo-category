@@ -1,8 +1,33 @@
-<div class="productsListHeader ml-12">
-    <div class="productsListSortOutfit"></div>
+<div class="productsListHeader grid">
+    <div class="productsListSortOutfit">
+        <div class="product-list-view-and-sort">
+            <!--            <a class="secondary-button product-image-view outfit " href="?image_view=outfit&amp;pn=1">Product view</a>-->
+            <a class="secondary-button product-image-view float-left selected" href="?image_view=product&amp;pn=1">Outfit View
+        </a>
+            <div class="sort-by float-left" id="sort-by">
+                <form id="product-list-price-filter" method="get" name="formPrice" action="/gb/en/d/Shop/Clothing/All">
+
+                    <select name="sortOrder">
+                        <option value="">Sort by</option>
+
+                        <option value="new-in">New in</option>
+
+                        <option value="price-desc">Price High to Low</option>
+                        <option value="price-asc">Price Low to High</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="productsListTitle">
         <h1>What's New</h1>
-        <span>{{allProducts.total}}</span>
+        <div class="productsListResult">
+            <span>{{allProducts.total}}</span>
+        </div>
+
     </div>
-    <div class="productsListPagination"></div>
+    <div class="productsListPagination">
+        123
+    </div>
+
 </div>

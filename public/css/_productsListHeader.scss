@@ -1,11 +1,12 @@
 .productsListHeader {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px dotted $black;
     padding-top: 20px;
     display: block;
     position: relative;
     .productsListSortOutfit {
         width: 35%;
         float: left;
+        padding-top: 15px;
     }
     .productsListTitle {
         width: 30%;
@@ -16,11 +17,10 @@
             font-size: 20px;
         }
         .productsListResult {
-            width: 75%;
+            width: 30%;
             margin: 0 auto;
             text-align: center;
-            padding-left: 5px;
-            padding-right: 5px;
+            margin-bottom: -5px;
             background-color: $white;
             
         }
@@ -28,5 +28,8 @@
     .productsListPagination {
         width: 35%;
         float: left;
+        padding-top: 10px;
+        text-align: right;
+
     }
 }

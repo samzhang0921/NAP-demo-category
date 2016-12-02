@@ -1,8 +1,6 @@
 @charset "utf-8";
-
 // Third-party libraries
 //@import "font-awesome/font-awesome.scss";
-
 // Variables and mixins
 @import "variables";
 @import "mixins";
@@ -13,7 +11,6 @@
 @import "utilities";
 @import "productsList";
 @import "productsListHeader";
-
 .listPage {
     margin: 0 auto;
     padding: 15px 0 30px;
@@ -23,6 +20,14 @@
     *:before,
     *:after {
         box-sizing: border-box;
+        border: 0 none;
+        font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
     }
     .tabs-sections {
         > section {

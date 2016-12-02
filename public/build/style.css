@@ -1049,13 +1049,14 @@ main {
       font-size: 14px; }
 
 .productsListHeader {
-  border-bottom: 1px solid #000;
   padding-top: 20px;
   display: block;
   position: relative; }
   .productsListHeader .productsListSortOutfit {
     width: 35%;
     float: left; }
+    .productsListHeader .productsListSortOutfit a {
+      margin-right: 10px; }
   .productsListHeader .productsListTitle {
     width: 30%;
     float: left; }
@@ -1063,15 +1064,22 @@ main {
       text-align: center;
       font-size: 20px; }
     .productsListHeader .productsListTitle .productsListResult {
-      width: 75%;
-      margin: 0 auto;
       text-align: center;
       padding-left: 5px;
       padding-right: 5px;
-      background-color: #fff; }
+      margin: 0px 25px;
+      background-color: #fff;
+      z-index: 99; }
   .productsListHeader .productsListPagination {
     width: 35%;
     float: left; }
+  .productsListHeader hr {
+    border-bottom: 1px dotted #999;
+    border-top: 0 none;
+    bottom: 8px;
+    clear: both;
+    float: none;
+    position: relative; }
 
 .listPage {
   margin: 0 auto;
@@ -1081,7 +1089,15 @@ main {
   .listPage *,
   .listPage *:before,
   .listPage *:after {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    border: 0 none;
+    font-family: GillSans, "Gill Sans MT", Calibri, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline; }
   .listPage .tabs-sections > section {
     display: none;
     min-height: 400px; }

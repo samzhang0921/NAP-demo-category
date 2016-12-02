@@ -4,6 +4,7 @@ $serif:                         Georgia, Times, 'Times New Roman', serif;
 $gill-sans:                     'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 $zh:                            'Microsoft YaHei', '微软雅黑', Hei, Hei Ti, SimHei, STXihei, sans-serif;
 
+
 // Gill Sans
 $GillSans:                      GillSans, $gill-sans;
 $GillSansBold:                  GillSansBold, $gill-sans;
@@ -39,6 +40,7 @@ $MSungPRC-Light:                'MSung PRC Light', $zh;
         font-style: normal;
         overflow: visible;
         text-transform: none;
+        margin: 5px 0px;
         i {
             font-family: $ModernNAP-TextItalic;
             font-size: inherit;

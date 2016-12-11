@@ -18,6 +18,10 @@ function setCategories(req, res, next) {
 }
 
 function setCaregoriesProducts(req, res, next){
+
+    if (res.locals.setCategories == all) {
+        return re
+    }
     res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
     next();
 }

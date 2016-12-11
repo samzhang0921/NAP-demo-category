@@ -14,9 +14,9 @@ var routes = {
             middleware.processProducts,
             controller.render
                
-               )
+               );
     }
-}
+};
 module.exports = {
     routes: routes
 };

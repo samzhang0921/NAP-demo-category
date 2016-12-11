@@ -1,6 +1,6 @@
 function finalPrice(product) {
     return product.price.gross / product.price.divisor;
-};
+}
 
 function sortBy(products, sortOrder) {
     switch (sortOrder) {
@@ -9,13 +9,11 @@ function sortBy(products, sortOrder) {
             return productA.price.gross < productB.price.gross ? 1 : -1;
         });
         return products;
-        break;
     case 'low':
         products.sort(function (productA, productB) {
             return productA.price.gross > productB.price.gross ? 1 : -1;
         });
         return products;
-        break;
     default:
         return;
     }

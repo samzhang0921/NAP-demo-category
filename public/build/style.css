@@ -1033,21 +1033,22 @@ main {
 .productsList {
   font-family: GillSans, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 14px;
-  width: 70%;
+  width: 80%;
   float: left; }
   .productsList ul li {
-    width: 33.33%;
+    width: 27.33%;
     height: 350px;
     float: left;
-    padding: 2%;
+    margin: 3%;
+    padding: 0 0 5% 5%;
     list-style: none; }
     .productsList ul li .brand {
-      font-family: GillSans,"Gill Sans MT",Calibri,sans-serif;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 700;
       text-transform: uppercase; }
     .productsList ul li p {
-      font-size: 14px; }
+      font-size: 14px;
+      word-wrap: break-word; }
 
 .productsListHeader {
   border-bottom: 1px dotted #000;
@@ -1087,6 +1088,18 @@ main {
     clear: both;
     z-index: -1;
     position: relative; }
+
+.productsFilterMenu {
+  width: 20%;
+  float: left;
+  font-family: GillSans, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 14px;
+  padding-top: 3%; }
+  .productsFilterMenu ul {
+    margin-top: 10%; }
+    .productsFilterMenu ul li {
+      padding-left: 5%;
+      list-style: none; }
 
 .listPage {
   margin: 0 auto;

@@ -19,4 +19,4 @@ var routes = {
 
 module.exports = {
     routes: routes
-}
+};

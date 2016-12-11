@@ -45,7 +45,7 @@ module.exports = function(grunt){
     },
       
     jshint: {
-            files: ['Gruntfile.js', 'public/javascripts/**/*.js'],
+            files: ['Gruntfile.js', 'public/javascripts/**/*.js', 'middleware/**/*.js', 'controller/**/*.js', 'routes/**/*.js', 'utility/**/*.js', 'utilities/**/*.js'],
             options: {
                     globals: {
                     jQuery: true
@@ -60,7 +60,7 @@ module.exports = function(grunt){
             },
         
         js: {
-                files: ['Gruntfile.js', 'public/javascripts/**/*.js'],
+                files: ['Gruntfile.js', 'public/javascripts/**/*.js', 'middleware/**/*.js', 'controller/**/*.js', 'routes/**/*.js', 'utility/**/*.js', 'utilities/**/*.js'],
                 tasks: ['jshint', 'concat:build', 'uglify:build']
             },
     }

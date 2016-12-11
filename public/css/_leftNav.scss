@@ -1,4 +1,14 @@
-.productsFilterMenu {
-    width: 30%;
-    float: left;
-}
+ .productsFilterMenu {
+     width: 20%;
+     float: left;
+    font-family: $GillSans;
+    font-size: 14px;
+     padding-top: 3%;
+     ul{
+         margin-top: 10%;
+         li{
+             padding-left:5%;
+             list-style: none;
+         }
+     }
+ }

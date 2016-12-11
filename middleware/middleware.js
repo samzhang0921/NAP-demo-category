@@ -19,10 +19,12 @@ function setCategories(req, res, next) {
 
 function setCaregoriesProducts(req, res, next){
 
-    if (res.locals.setCategories == all) {
-        return re
+    if (res.locals.categories == 'all') {
+        res.locals.allProducts = res.locals.allProducts;
+    } else {
+        res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
     }
-    res.locals.allProducts = utility.getAllCategoriesProducts(res.locals.allProducts, res.locals.categories);
+
     next();
 }
 function setQuery(req, res, next) {

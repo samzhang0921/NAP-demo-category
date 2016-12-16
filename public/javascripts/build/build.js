@@ -6,7 +6,7 @@
     var pl = document.querySelectorAll('#productList img');
 //    console.log(typeof pl);
 //    console.log(pl[0]);
-    pl = [].slice.call(pl); 
+    pl = [].slice.call(pl);
     pl.forEach(function (ele) {
         ele.addEventListener('mouseenter', function (event) {
             swapSrc(this, false);
@@ -23,7 +23,8 @@
         var newSrc = hover ? src.replace('_in_', '_ou_') : src.replace('_ou_', '_in_');
         ele.setAttribute('src', newSrc);
     }
-})();;(function () {
+})();
+;(function () {
     var productView = document.querySelectorAll('.product-image-view');
     productView = [].slice.call(productView);
     productView.forEach(function (ele) {

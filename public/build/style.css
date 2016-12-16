@@ -1060,12 +1060,14 @@ main {
     float: left;
     padding-top: 15px; }
     .productsListHeader .productsListSortOutfit .product-image-view {
+      width: 100px;
+      text-align: center;
       margin-right: 15px;
       font-size: 11px;
       display: none;
       float: left;
       border: 1px dotted #000;
-      padding: 2px 4px; }
+      padding: 3px 0; }
       .productsListHeader .productsListSortOutfit .product-image-view.selected {
         display: block; }
     .productsListHeader .productsListSortOutfit .sort-by {

@@ -1059,8 +1059,18 @@ main {
     width: 35%;
     float: left;
     padding-top: 15px; }
-    .productsListHeader .productsListSortOutfit a {
-      margin-right: 15px; }
+    .productsListHeader .productsListSortOutfit .product-image-view {
+      margin-right: 15px;
+      font-size: 11px;
+      display: none;
+      float: left;
+      border: 1px dotted #000;
+      padding: 2px 4px; }
+      .productsListHeader .productsListSortOutfit .product-image-view.selected {
+        display: block; }
+    .productsListHeader .productsListSortOutfit .sort-by {
+      border: 1px dotted #000;
+      float: left; }
   .productsListHeader .productsListTitle {
     width: 30%;
     float: left; }

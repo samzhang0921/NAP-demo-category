@@ -2,7 +2,7 @@
     var pl = document.querySelectorAll('#productList img');
 //    console.log(typeof pl);
 //    console.log(pl[0]);
-    pl = [].slice.call(pl); 
+    pl = [].slice.call(pl);
     pl.forEach(function (ele) {
         ele.addEventListener('mouseenter', function (event) {
             swapSrc(this, false);

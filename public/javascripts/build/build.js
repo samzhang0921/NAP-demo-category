@@ -1,4 +1,8 @@
-(function () {
+(function(){
+  console.log('hello');
+
+})();
+;(function () {
     var pl = document.querySelectorAll('#productList img');
 //    console.log(typeof pl);
 //    console.log(pl[0]);
@@ -19,7 +23,13 @@
         var newSrc = hover ? src.replace('_in_', '_ou_') : src.replace('_ou_', '_in_');
         ele.setAttribute('src', newSrc);
     }
-})();;(function(){
-  console.log('hello');
-    
+})();;(function () {
+    var productView = document.querySelectorAll('.product-image-view');
+    productView = [].slice.call(productView);
+    productView.forEach(function (ele) {
+        ele.addEventListener('onclick', function(event){
+            console.log(this);
+            });
+        });
+
 })();

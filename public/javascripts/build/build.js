@@ -1,4 +1,4 @@
-(function(){
+;(function(){
   console.log('hello');
 
 })();
@@ -68,3 +68,4 @@
 //    });
 
 })();
+>>>>>>> origin/master

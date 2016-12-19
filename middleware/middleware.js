@@ -49,7 +49,9 @@ function processProducts(req, res, next) {
   }
   //make sure if there no sort query,  it still can get data
   if (res.locals.sort) {
-      var sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
+        var sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
+  }else{
+      sortedProducts = res.locals.allProducts;
   }
 //  console.log(res.locals.allProducts);
   next();

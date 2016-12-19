@@ -2,9 +2,7 @@
     var pl = document.querySelectorAll('#productList img');
 //    console.log(typeof pl);
 //    console.log(pl[0]);
-//    console.log('beofre', pl);
     pl = [].slice.call(pl);
-//    console.log([].slice.call(pl, 1));
     pl.forEach(function (ele) {
         ele.addEventListener('mouseenter', function (event) {
             swapSrc(this, false);

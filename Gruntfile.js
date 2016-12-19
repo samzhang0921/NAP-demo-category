@@ -39,7 +39,7 @@ module.exports = function(grunt){
         separator: ';',
       },
       build: {
-        src: ['public/javascripts/main.js','public/javascripts/leftNav.js'],
+        src: ['public/javascripts/src/**/*.js'],
         dest: 'public/javascripts/build/build.js',
       },
     },

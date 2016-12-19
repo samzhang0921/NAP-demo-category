@@ -6,10 +6,24 @@
     .productsListSortOutfit {
         width: 35%;
         float: left;
-        a {
-            margin-right: 15px;
-        }
         padding-top: 15px;
+        .product-image-view {
+            width: 100px;
+            text-align: center;
+            margin-right: 15px;
+            font-size: 11px;
+            display: none;
+            float: left;
+            border: 1px dotted $black;
+            padding: 3px 0;
+            &.selected {
+                display: block;
+            }
+        }
+        .sort-by {
+            border: 1px dotted $black;
+            float: left;
+        }
     }
     .productsListTitle {
         width: 30%;
@@ -27,7 +41,6 @@
             display: block;
             width: 30%;
             text-align: center;
-           
         }
     }
     .productsListPagination {
@@ -40,10 +53,8 @@
         border-bottom: 1px dotted $black;
         border-top: 0 none;
         bottom: 8px;
-        clear: both;    
-         z-index: -1;
+        clear: both;
+        z-index: -1;
         position: relative;
-      
     }
 }
-

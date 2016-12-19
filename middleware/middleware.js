@@ -37,6 +37,7 @@ function setQuery(req, res, next) {
 }
 
 function processProducts(req, res, next) {
+    var sortedProducts;
   if (res.locals.brandId) {
       var brandArray = res.locals.brandId.split(',');
       var brandProducts = utility.getAllBrandsProducts(res.locals.allProducts, brandArray);
@@ -49,7 +50,7 @@ function processProducts(req, res, next) {
   }
   //make sure if there no sort query,  it still can get data
   if (res.locals.sort) {
-        var sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
+    sortedProducts = utility.sortBy(res.locals.allProducts, res.locals.sort);
   }else{
       sortedProducts = res.locals.allProducts;
   }

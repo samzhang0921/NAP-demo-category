@@ -13,7 +13,7 @@ var routes = {
             middleware.setQuery,
             middleware.processProducts,
             controller.render
-               
+
                );
     }
 };

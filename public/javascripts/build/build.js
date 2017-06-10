@@ -1,5 +1,5 @@
 ;(function(){
-  console.log('hello');
+//  console.log('hello');
 
 })();
 ;(function () {
@@ -29,8 +29,8 @@
     var product = document.querySelector('.product');
      var product_imgs = document.querySelectorAll('.productsList img');
     var p_i= [].slice.call(product_imgs);
-    console.log(p_i);
-    console.log(outFit,product);
+//    console.log(p_i);
+//    console.log(outFit,product);
     outFit.addEventListener('click', function(even){
         even.preventDefault();
         this.classList.remove('selected');
